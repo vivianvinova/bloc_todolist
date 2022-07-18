@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 import '../../../data/model/todo_model.dart';
 
 part 'todo_event.dart';
 part 'todo_state.dart';
 
-class TodosBloc extends Bloc<TodosEvent, TodoState> {
+class TodosBloc extends HydratedBloc<TodosEvent, TodoState> {
   TodosBloc() : super(TodoLoadingState()) {
     on<LoadTodosEvent>(_onLoadTodos);
     on<AddTodoEvent>(_onAddTodo);
@@ -45,5 +45,18 @@ class TodosBloc extends Bloc<TodosEvent, TodoState> {
       List<TodoModel> todos = state.todoList.map((todo) => todo.id == event.todo.id ? event.todo : todo).toList();
       emit(TodoLoadedState(todoList: todos));
     }
+  }
+
+  @override
+  TodoState? fromJson(Map<String, dynamic> json) {
+    // TODO: implement fromJson
+    return TodoLoadedState.fromMap(json);
+  }
+
+  @override
+  Map<String, dynamic>? toJson(TodoState state) {
+    // TODO: implement toJson
+    final state = this.state as TodoLoadedState;
+   return state.toMap();
   }
 }

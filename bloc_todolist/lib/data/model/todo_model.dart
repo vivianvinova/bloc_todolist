@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../shared/config/app_colors.dart';
-
 
 class TodoModel {
   final String id;
@@ -19,6 +19,26 @@ class TodoModel {
   });
 
   // TODO: implement props
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'color': color?.value,
+      'title': title,
+      'content': content,
+    };
+  }
+
+  factory TodoModel.fromMap(Map<String, dynamic> map) {
+    return TodoModel(
+      id: map['id'] ?? '',
+      color: map['color'] != null ? Color(map['color']) : null,
+      title: map['title'],
+      content: map['content'],
+    );
+  }
+
+
 }
 
 List<TodoModel> todoListDemo = [
