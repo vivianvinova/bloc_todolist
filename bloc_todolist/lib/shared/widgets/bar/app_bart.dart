@@ -1,5 +1,5 @@
-import 'package:bloc_todolist/shared/config/config.dart';
-import 'package:bloc_todolist/shared/widgets/widges.dart';
+import '../../config/config.dart';
+import '../widges.dart';
 import 'package:flutter/material.dart';
 
 import '../../service/navigation_service.dart';

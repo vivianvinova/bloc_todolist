@@ -7,7 +7,7 @@ class ScreenFrame extends StatelessWidget {
   final Color? backgroundColors;
   final double horizontalPadding;
   final double verticalPadding;
-  final List<Widget> children;
+  final List<Widget> children; 
   final PreferredSizeWidget? appBar;
   final Widget? bottomNavigationBar;
   final Widget? body;

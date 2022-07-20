@@ -1,4 +1,4 @@
-import 'package:bloc_todolist/shared/extensions/image_assets_path_extension.dart';
+import '../../extensions/image_assets_path_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

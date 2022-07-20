@@ -8,16 +8,16 @@ part 'todo_event.dart';
 part 'todo_state.dart';
 
 class TodosBloc extends HydratedBloc<TodosEvent, TodoState> {
-  TodosBloc() : super(TodoLoadingState()) {
+  TodosBloc() : super(TodoLoadedState()) {
     on<LoadTodosEvent>(_onLoadTodos);
     on<AddTodoEvent>(_onAddTodo);
     on<DeleteTodoEvent>(_onDeleteTodo);
     on<UpdateTodoEvent>(_onUpdateTodo);
   }
 
-  void _onLoadTodos(LoadTodosEvent event, Emitter<TodoState> emit) {
+  void _onLoadTodos(LoadTodosEvent event, Emitter<TodoState> emit)  {
     emit(
-      TodoLoadedState(todoList: event.todoList),
+      const TodoLoadedState(),
     );
   }
 
@@ -50,13 +50,18 @@ class TodosBloc extends HydratedBloc<TodosEvent, TodoState> {
   @override
   TodoState? fromJson(Map<String, dynamic> json) {
     // TODO: implement fromJson
+      print("Lan ANh");
+
     return TodoLoadedState.fromMap(json);
   }
 
   @override
   Map<String, dynamic>? toJson(TodoState state) {
     // TODO: implement toJson
-    final state = this.state as TodoLoadedState;
-   return state.toMap();
+    if (state is TodoLoadedState) {
+      print("Kien");
+      return state.toMap();
+    }
+    return null;
   }
 }

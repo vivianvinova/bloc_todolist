@@ -1,4 +1,4 @@
-import 'package:bloc_todolist/shared/config/config.dart';
+import '../../config/config.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/model/todo_model.dart';
@@ -24,7 +24,7 @@ class NoteItem extends StatelessWidget {
         width: ShapeSize.size366,
         padding: const EdgeInsets.symmetric(horizontal: Space.spacing32, vertical: Space.spacing20),
         decoration: BoxDecoration(
-          color: info.color,
+          // color: info.color,
           borderRadius: BorderRadius.circular(AppRadius.radius5),
         ),
         child: Column(

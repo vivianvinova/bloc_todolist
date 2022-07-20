@@ -1,8 +1,7 @@
-import 'package:bloc_todolist/shared/config/config.dart';
+import '../shared/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../data/model/todo_model.dart';
 import '../shared/service/navigation_service.dart';
 import 'bloc/edit bloc/edit_bloc.dart';
 import 'bloc/todo bloc/todo_bloc.dart';
@@ -18,10 +17,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => TodosBloc()
-            ..add(
-              LoadTodosEvent(todoList: todoListDemo),
-            ),
+          create: (context) => TodosBloc()/* ..add(LoadTodosEvent()) */,
+            
         ),
         BlocProvider<EditBloc>(create: (context) => EditBloc()),
       ],

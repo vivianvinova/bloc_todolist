@@ -1,12 +1,9 @@
-import 'dart:math';
-
-import 'package:bloc_todolist/shared/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:uuid/uuid.dart';
 
 import '../../../data/model/todo_model.dart';
+import '../../../shared/config/config.dart';
 import '../../../shared/values/strings.dart';
 import '../../../shared/widgets/widges.dart';
 import '../../bloc/todo bloc/todo_bloc.dart';
@@ -47,7 +44,7 @@ class AddNotePage extends StatelessWidget {
               var todo = TodoModel(
                 title: _titleController.text,
                 content: _contentController.text,
-                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                // color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
                 id: Uuid().v4(),
               );
               context.read<TodosBloc>().add(

@@ -5,7 +5,6 @@ import 'package:bloc_todolist/shared/widgets/widges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import '../../../shared/values/strings.dart';
 import '../../bloc/todo bloc/todo_bloc.dart';
 import '../note/add_note_page.dart';

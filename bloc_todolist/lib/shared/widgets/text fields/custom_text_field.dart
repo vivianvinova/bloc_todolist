@@ -1,7 +1,8 @@
-import 'package:bloc_todolist/shared/config/config.dart';
-import 'package:bloc_todolist/shared/extensions/image_assets_path_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../config/config.dart';
+import '../../extensions/image_assets_path_extension.dart';
 
 
 class CustomTextField extends StatelessWidget {
@@ -9,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController? controller;
   final double borderRadius;
-  final String? Function(String?)? validator; // SOlid và denpencies injection, khi dung getx
+  final String? Function(String?)? validator;
   final String? suffixIcon;
   final String? prefixIcon;
   final bool obscureText;

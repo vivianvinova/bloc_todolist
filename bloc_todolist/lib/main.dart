@@ -6,11 +6,11 @@ import 'package:path_provider/path_provider.dart';
 import 'presentation/app.dart';
 
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final storage = await HydratedStorage.build(storageDirectory: await  getApplicationDocumentsDirectory());
   HydratedBlocOverrides.runZoned(
-    () => runApp(MyApp()),
+    () => runApp(const MyApp()),
     storage: storage,
   );
 }

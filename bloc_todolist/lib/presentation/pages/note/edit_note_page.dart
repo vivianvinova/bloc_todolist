@@ -1,8 +1,8 @@
-import 'package:bloc_todolist/shared/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/model/todo_model.dart';
+import '../../../shared/config/config.dart';
 import '../../../shared/values/strings.dart';
 import '../../../shared/widgets/widges.dart';
 import '../../bloc/edit bloc/edit_bloc.dart';
@@ -90,7 +90,7 @@ class _EditNotePageState extends State<EditNotePage> {
                               id: widget.todo.id,
                               title: _titleController.text,
                               content: _contentController.text,
-                              color: widget.todo.color,
+                              // color: widget.todo.color,
                             )),
                           );
                     }

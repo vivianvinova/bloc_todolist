@@ -1,4 +1,3 @@
-
 part of 'todo_bloc.dart';
 
 abstract class TodoState extends Equatable {
@@ -13,7 +12,7 @@ class TodoLoadingState extends TodoState {}
 class TodoLoadedState extends TodoState {
   final List<TodoModel> todoList;
 
-  TodoLoadedState({this.todoList = const <TodoModel>[]});
+  const TodoLoadedState({this.todoList = const <TodoModel>[]});
 
   @override
   List<Object> get props => [todoList];
@@ -29,6 +28,4 @@ class TodoLoadedState extends TodoState {
       todoList: List<TodoModel>.from(map['todoList']?.map((x) => TodoModel.fromMap(x))),
     );
   }
-
-
 }
