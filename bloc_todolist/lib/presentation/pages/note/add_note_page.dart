@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uuid/uuid.dart';
@@ -50,7 +51,7 @@ class AddNotePage extends StatelessWidget {
               context.read<TodosBloc>().add(
                     AddTodoEvent(todo: todo),
                   );
-              Navigator.pop(context);
+              context.router.pop();
             },
           ),
         ],
