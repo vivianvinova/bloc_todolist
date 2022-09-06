@@ -81,7 +81,7 @@ class _EditNotePageState extends State<EditNotePage> {
                     icon: state is DisableEditState ? Icons.edit : Icons.done,
                     size: IconSize.large,
                   ),
-                  onPressed: () {
+onPressed: () {
                     context.read<EditBloc>().add(PressEditEvent());
                     if (state is EnableEditState) {
                       context.read<TodosBloc>().add(

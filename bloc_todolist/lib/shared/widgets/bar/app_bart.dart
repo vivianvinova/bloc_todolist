@@ -1,3 +1,5 @@
+import 'package:auto_route/auto_route.dart';
+
 import '../../config/config.dart';
 import '../widges.dart';
 import 'package:flutter/material.dart';
@@ -20,13 +22,17 @@ class CustomAppBar extends AppBar {
     this.actionOnPressed,
   }) : super(
           leading: haveBackButton
-              ? IconButton(
-                  icon: const CustomIcon(
-                    svgIcon: AppImages.icBack,
-                    size: IconSize.small,
-                  ),
-                  onPressed: () => Navigator.pop(NavigationService.navigatorKey.currentContext!),
-                )
+              ? Builder(
+                builder: (context) {
+                  return IconButton(
+                      icon: const CustomIcon(
+                        svgIcon: AppImages.icBack,
+                        size: IconSize.small,
+                      ),
+                      onPressed: () => context.router.pop(),
+                    );
+                }
+              )
               : null,
           actions: actionIcon != null
               ? [

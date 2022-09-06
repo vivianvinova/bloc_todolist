@@ -1,3 +1,4 @@
+import '../route/routes.gr.dart';
 import '../shared/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    final _appRouter = AppRouter();  
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -22,15 +24,15 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<EditBloc>(create: (context) => EditBloc()),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: 'To do List',
-        navigatorKey: NavigationService.navigatorKey,
         debugShowCheckedModeBanner: false,
+          routerDelegate: _appRouter.delegate(),      
+      routeInformationParser: _appRouter.defaultRouteParser(), 
         locale: const Locale("en"),
         theme: ThemeData(
           textTheme: CustomTextStyle.textFontApp,
         ),
-        home: HomePage(),
         // translationsKeys: AppTranslation.translations,
       ),
     );

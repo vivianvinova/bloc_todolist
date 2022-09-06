@@ -7,7 +7,7 @@ abstract class TodoState extends Equatable {
   List<Object> get props => [];
 }
 
-class TodoLoadingState extends TodoState {}
+// class TodoLoadingState extends TodoState {}
 
 class TodoLoadedState extends TodoState {
   final List<TodoModel> todoList;
