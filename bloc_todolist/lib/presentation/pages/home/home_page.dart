@@ -16,10 +16,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenFrame(
-      appBar: CustomAppBar(
-        labelTitle: AppString.notes,
-        haveBackButton: false,
-      ),
+      // appBar: CustomAppBar(
+      //   labelTitle: AppString.notes,
+      //   haveBackButton: false,
+      // ),
       children: [
         const CustomTextField(
           hintText: AppString.searchNote,
